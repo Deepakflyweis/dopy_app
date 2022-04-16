@@ -27,9 +27,9 @@ class WelcomeScreen3 extends StatelessWidget {
               child: Image.asset('assets/images/photos.png',width: 30.w,height: 5.h,fit: BoxFit.fill),),
 
             Column(
-              children: const [
-                  Text('Instant ',style: TextStyle(color: pinkclr,fontSize: 16,fontFamily: 'Poppins'),),
-                  Text('Delivery',style: TextStyle(color: pinkclr,fontSize: 16,fontFamily: 'Poppins'),),
+              children:  [
+                  Text('Instant ',style: TxtStyleP),
+                  Text('Delivery',style: TxtStyleP,),
               ],
             ),
 

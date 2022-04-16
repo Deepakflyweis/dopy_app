@@ -27,7 +27,7 @@ class WelcomeScreen2 extends StatelessWidget {
               onTap: (){},
               child: Image.asset('assets/images/sign.png',width: 30.w,height: 5.h,fit: BoxFit.fill),),
 
-            const Text('AD FREE',style: TextStyle(color: pinkclr,fontSize: 16,fontFamily: 'Poppins'),),
+              Text('AD FREE',style: TxtStyleP,),
 
             GestureDetector(
               onTap: (){},

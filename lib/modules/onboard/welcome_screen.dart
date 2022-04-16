@@ -35,7 +35,7 @@ import 'package:flutter/cupertino.dart';
             children:   [
               Text('Flyers in just ',
                 style: TxtStyleN,),
-              Text('3 Click & 30 Minutes',style: const TextStyle(color: pinkclr,fontSize: 16,fontFamily: 'Poppins'),)
+              Text('3 Click & 30 Minutes',style: TxtStyleP,)
             ],
          )
        ],

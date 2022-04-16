@@ -16,3 +16,15 @@ TextStyle TxtStyleN =  const TextStyle(
   fontFamily: 'Poppins',
   fontWeight: FontWeight.w700,
 );
+TextStyle TxtStyleTitle =  const TextStyle(
+  fontSize: 18.0,
+  color: blckclr,
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.bold,
+);
+TextStyle TxtStyleP =  const TextStyle(
+  color: pinkclr,
+  fontSize: 16,
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.bold,
+);

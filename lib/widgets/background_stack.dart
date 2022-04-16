@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 
 
-
 class BackgroundScreen extends StatelessWidget {
-  const BackgroundScreen({
-    Key? key, required child,
+  Widget child;
+
+    BackgroundScreen({
+    Key? key, required this.child,
   }) : super(key: key);
 
   @override
@@ -51,7 +52,8 @@ class BackgroundScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("lib/assets/images/4.png"))),
-            )),
+            )
+        ),
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:dopy_app/modules/onboard/welcome_indexx.dart';
 import 'package:dopy_app/modules/onboard/welcome_screen.dart';
+import 'package:dopy_app/modules/user/verify_screen.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 import 'package:dopy_app/widgets/background_container.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
-        home:  WelcomeIndex()
+        home:  VerifyScreen()
     );
     }));
   }

@@ -7,20 +7,20 @@ class Utility{
   static actionBar(){
     return AppBar(
       backgroundColor: Colors.transparent,
-      elevation: 0,
+      elevation: 1,
       flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.topRight,
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
                 colors: [
                   Color(0xFFFFDE6A),
-                  Color(0xFFFFDE6A),
+                  Color(0xFFFFDF6E),
                   Color(0xFFE5097F),
                 ]),
           )
       ),
-      title: Text('Your Location',style: TextStyle(color: blckclr,fontSize: 16)),
+      title: const Text('Your Location',style: TextStyle(color: blckclr,fontSize: 16)),
       centerTitle: true,
       leading:  Padding(
         padding: const EdgeInsets.only(left: 10.0),
@@ -28,26 +28,24 @@ class Utility{
             onTap: (){
 
             },
-            child: Container(
-              width: 50,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle
-              ),
-              child: Image.network("https://picsum.photos/250?image=9",fit: BoxFit.fill),
-               ),
+          child: CircleAvatar(
+            radius: 15.w,
+            backgroundColor: Colors.transparent,
+            child: Image.asset('assets/images/profile.png'),
+          ),
           ),
       ),
       actions: [
        Padding(
          padding: const EdgeInsets.only(right: 30.0),
          child: IconButton(
-            icon: Icon(Icons.keyboard_arrow_down,size: 35,color: blckclr),
+            icon: const Icon(Icons.keyboard_arrow_down,size: 30,color: blckclr),
             onPressed: () {
             },
           ),
        ),
        IconButton(
-            icon: Icon(Icons.search,size: 35,color: blckclr),
+            icon: const Icon(Icons.search,size: 30,color: blckclr),
             onPressed: () {
             },
           ),

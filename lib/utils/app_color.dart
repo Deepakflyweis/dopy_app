@@ -7,3 +7,4 @@ const blckclr = Color(0xFF3A3C3F);
 const pinkclr = Color(0xFFE5097F);
 const yellowclr = Color(0xFFFFED00);
 const btnclr = Color(0xFF3A3C3F);
+const conbackclr = Color(0xFFE4E4E4);

@@ -22,7 +22,6 @@ class _VerifyScreenState extends State<VerifyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Utility.actionBar(),
         body: SafeArea(
             child: Stack(
               children: [

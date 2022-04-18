@@ -6,8 +6,8 @@ class BackgroundScreen extends StatelessWidget {
   Widget child;
 
     BackgroundScreen({
-    Key? key, required this.child,
-  }) : super(key: key);
+     required this.child,
+  }) ;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class BackgroundScreen extends StatelessWidget {
               height: 491,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("lib/assets/images/111.png"))),
+                      image: AssetImage("assets/images/1.png"))),
             )),
         Positioned(
             top: -40,
@@ -31,7 +31,7 @@ class BackgroundScreen extends StatelessWidget {
               height: 350,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("lib/assets/images/2.png"))),
+                      image: AssetImage("assets/images/2.png"))),
             )),
         Positioned(
             top: 430,
@@ -41,7 +41,7 @@ class BackgroundScreen extends StatelessWidget {
               height: 491,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("lib/assets/images/3.png"))),
+                      image: AssetImage("assets/images/3.png"))),
             )),
         Positioned(
             top: 420,
@@ -51,9 +51,10 @@ class BackgroundScreen extends StatelessWidget {
               height: 350,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("lib/assets/images/4.png"))),
+                      image: AssetImage("assets/images/4.png"))),
             )
         ),
+        Center(child: child,)
       ],
     );
   }

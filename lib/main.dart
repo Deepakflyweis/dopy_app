@@ -1,8 +1,10 @@
-import 'package:dopy_app/modules/onboard/welcome_indexx.dart';
-import 'package:dopy_app/modules/onboard/welcome_screen.dart';
-import 'package:dopy_app/modules/user/verify_screen.dart';
+import 'package:dopy_app/modules/doc_upload/center_pinned_book.dart';
+import 'package:dopy_app/modules/doc_upload/flyer_upload_screen.dart';
+import 'package:dopy_app/modules/doc_upload/standard_business_card.dart';
+import 'package:dopy_app/modules/doc_upload/texture_business_card.dart';
+import 'package:dopy_app/modules/home/home_index.dart';
+import 'package:dopy_app/modules/passport_classic_photo/passport_photo.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
-import 'package:dopy_app/widgets/background_container.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
-        home:  VerifyScreen()
+        home:  HomeIndex()
     );
     }));
   }

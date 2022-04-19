@@ -1,7 +1,9 @@
 
 import 'package:dopy_app/modules/doc_upload/flyer_upload_screen.dart';
 import 'package:dopy_app/modules/doc_upload/standard_business_card.dart';
+import 'package:dopy_app/modules/home/business_card_home.dart';
 import 'package:dopy_app/modules/home/documents_home.dart';
+import 'package:dopy_app/modules/home/flyer_home.dart';
 import 'package:dopy_app/modules/home/photos_home.dart';
 import 'package:dopy_app/utils/app_color.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
@@ -95,7 +97,7 @@ class _HomeIndexState extends State<HomeIndex> with SingleTickerProviderStateMix
           ],
         ),
         body: BackgroundScreen(
-            child: Container(
+            child: SizedBox(
               height: 100.h,
               // padding: EdgeInsets.all(10),
               child: Column(
@@ -105,7 +107,7 @@ class _HomeIndexState extends State<HomeIndex> with SingleTickerProviderStateMix
                       height: 15.h,
                       child: Image.asset('assets/images/addss.png', fit: BoxFit.fill,)),
 
-                  SizedBox(height: 2.h,),
+                  SizedBox(height: 1.h,),
                   const Align(
                      alignment: Alignment.centerLeft,
                        child: Text('Categories',
@@ -117,10 +119,11 @@ class _HomeIndexState extends State<HomeIndex> with SingleTickerProviderStateMix
                       unselectedLabelColor: Colors.black,
                       indicatorColor: btnclr,
                       indicatorWeight:  5.0,
-                      indicatorSize: TabBarIndicatorSize.label ,
+                      indicatorSize: TabBarIndicatorSize.tab ,
                       controller: _tabController,
                       tabs: [
                            Tab(
+                             icon:  Image.asset("assets/images/phot.png",height: 21,fit: BoxFit.fitHeight),
                               child: AutoSizeText(
                                 'Photos',
                                 style: TxtStyleN,
@@ -128,20 +131,24 @@ class _HomeIndexState extends State<HomeIndex> with SingleTickerProviderStateMix
                               ),
                           ),
                           Tab(
+                            icon:  Image.asset("assets/images/doct.png",height: 25,fit: BoxFit.fitHeight),
                             child: AutoSizeText(
-                              'Document ',
+                              'Document',
                               style: TxtStyleN,
                               maxLines: 1,
                             ),
                         ),
-                        Tab(
+                         Tab(
+                          icon:  Image.asset("assets/images/busst.png",height: 21,fit: BoxFit.fitHeight),
                             child: AutoSizeText(
-                          'Business Card ',
-                          style: TxtStyleN,
-                          maxLines: 2,
-                        ),),
+                              'Business',
+                              style: TxtStyleN,
+                              maxLines: 1,
+                            ),
+                            ),
 
                         Tab(
+                          icon:  Image.asset("assets/images/flyt.png",height: 21,fit: BoxFit.fitHeight),
                           child: AutoSizeText(
                           'Flyer ',
                           style: TxtStyleN,
@@ -155,17 +162,76 @@ class _HomeIndexState extends State<HomeIndex> with SingleTickerProviderStateMix
                       children: const [
                         PhotosHome(),
                         DocumentsHome(),
-                        StandardBusinessCard(),
-                        FlyerUploadScreen(),
+                        BusinessCardHome(),
+                        FlyerHome(),
                       ],
                       controller: _tabController,
                     ),
                   ),
 
+                  GestureDetector(
+                    onTap: (){
+                      openSheet();
+                    },
+                    child: Image.asset('assets/images/scanbtn.png',
+                        height: 12.h,
+                        width: 50.w ,
+                        fit: BoxFit.cover
+                    ),
+                  ),
                 ],
               ),
             ) ),
       ),
     );
   }
+
+  void openSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: ((builder) => bottomSheet(context)),
+    );
+  }
+
+  bottomSheet(BuildContext context) {
+
+    final screenSize = MediaQuery.of(context).size;
+    return Container(
+      height:screenSize.height*0.30 ,
+      width: screenSize.width,
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: Column(
+        children: [
+
+          Wrap(
+            children: <Widget>[
+               const ListTile(
+                title: Text('Select Image From',style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+              ListTile(
+
+                title:  const Text('Camera',style: TextStyle(fontWeight: FontWeight.normal)),
+                onTap: () {
+
+                },
+              ),
+              ListTile(
+                  title:   const Text('Gallery',style: TextStyle(fontWeight: FontWeight.normal)),
+                  onTap: () {
+
+                  }),
+
+              ListTile(
+                title:    const Text('Cancel',style: TextStyle(fontWeight: FontWeight.normal)),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
 }

@@ -1,5 +1,6 @@
 
 
+import 'package:dopy_app/modules/home/home_index.dart';
 import 'package:dopy_app/utils/app_color.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 
@@ -26,7 +27,7 @@ class Utility{
         padding: const EdgeInsets.only(left: 10.0),
         child: InkWell(
             onTap: (){
-
+              Get.offAll(()=> HomeIndex());
             },
           child: CircleAvatar(
             radius: 15.w,

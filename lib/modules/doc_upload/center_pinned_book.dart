@@ -1,4 +1,5 @@
 
+import 'package:dopy_app/modules/home/home_index.dart';
 import 'package:dopy_app/utils/app_color.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 import 'package:dopy_app/utils/text_style.dart';
@@ -87,7 +88,6 @@ class _CenterPinnedBookState extends State<CenterPinnedBook> {
                                 label: 'Single Side'),
                           ],
                         ),
-
                         SizedBox(height: 1.h,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,7 +125,9 @@ class _CenterPinnedBookState extends State<CenterPinnedBook> {
                   ),
                   SizedBox(height: 2.h,),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Get.offAll(()=> HomeIndex());
+                    },
                     child: Image.asset('assets/images/addn.png',
                         width: 40.w,
                         height: 5.h,fit: BoxFit.fill),

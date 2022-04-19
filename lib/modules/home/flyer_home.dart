@@ -1,36 +1,37 @@
-import 'package:dopy_app/modules/passport_classic_photo/classic_photo.dart';
+
+import 'package:dopy_app/modules/doc_upload/flyer_upload_screen.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 import 'package:dopy_app/widgets/index_cardview.dart';
 import 'package:flutter/material.dart';
 
-class PhotosHome extends StatefulWidget {
-  const PhotosHome({Key? key}) : super(key: key);
+class FlyerHome extends StatefulWidget {
+  const FlyerHome({Key? key}) : super(key: key);
 
   @override
-  State<PhotosHome> createState() => _PhotosHomeState();
+  State<FlyerHome> createState() => _FlyerHomeState();
 }
 
-class _PhotosHomeState extends State<PhotosHome> {
+class _FlyerHomeState extends State<FlyerHome> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
           ListView.builder(
-            physics: BouncingScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 5,
-              // IndexCardView())
+              physics: BouncingScrollPhysics(),
+              itemCount: 2,
               itemBuilder: (BuildContext context, int index) {
-              return InkWell(
-                onTap: (){
-                  Get.to(()=> ClassicPhoto());
-                },
-                child: IndexCardView()
-              );
+                return InkWell(
+                    onTap: (){
+                      Get.to(()=> FlyerUploadScreen());
+                    },
+                    child: IndexCardView()
+                );
 
               }
-              ),
+
+          ),
 
           // SizedBox(height: 1.h,),
           // GestureDetector(

@@ -1,4 +1,6 @@
 import 'package:dopy_app/controllers/otp_verify_controller.dart';
+import 'package:dopy_app/modules/home/home_index.dart';
+import 'package:dopy_app/modules/user/login_screen.dart';
 import 'package:dopy_app/utils/app_color.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 import 'package:dopy_app/utils/utility/utility_appbar.dart';
@@ -47,13 +49,17 @@ class _VerifyScreenState extends State<VerifyScreen> {
                           children: [
                             SizedBox(width: 5.w,),
                             GestureDetector(
-                              onTap: (){},
+                              onTap: (){
+                                Get.offAll(()=> LoginScreen());
+                              },
                               child: Image.asset('assets/images/crsoss.png',width: 8.w,fit: BoxFit.fill),),
 
                             SizedBox(width: 75.w,),
 
                             GestureDetector(
-                                onTap: (){},
+                                onTap: (){
+                                  Get.offAll(()=> HomeIndex());
+                                },
                                 child: Text('Skip',style: TxtStyleP, )),
                           ],
                         ),
@@ -94,7 +100,9 @@ class _VerifyScreenState extends State<VerifyScreen> {
                         Divider(indent: 100,endIndent: 100,color: Colors.grey,thickness: 2.0),
                         SizedBox(height: 3.h,),
                         GestureDetector(
-                          onTap: (){},
+                          onTap: (){
+                            Get.offAll(()=> HomeIndex());
+                          },
                           child: Container(
                               height: 6.h,
                               width: 85.w,

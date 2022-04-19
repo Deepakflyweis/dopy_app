@@ -22,6 +22,12 @@ TextStyle TxtStyleN =  const TextStyle(
   fontFamily: 'Poppins',
   fontWeight: FontWeight.w700,
 );
+TextStyle TxtStyleCard =  const TextStyle(
+  fontSize: 13.0,
+  color: blckclr,
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w700,
+);
 TextStyle TxtStyleBox =  const TextStyle(
   fontSize: 16.0,
   color: blckclr,

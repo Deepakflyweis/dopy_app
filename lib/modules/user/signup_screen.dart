@@ -1,6 +1,9 @@
+import 'package:dopy_app/modules/onboard/welcome_indexx.dart';
+import 'package:dopy_app/modules/user/login_screen.dart';
 import 'package:dopy_app/utils/app_color.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 import 'package:dopy_app/utils/text_style.dart';
+import 'package:dopy_app/widgets/background_stack.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -19,14 +22,12 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-            child: Stack(
+    return SafeArea(
+      child: Scaffold(
+          body: BackgroundScreen(
+            child: Column(
               children: [
-                Image.asset('assets/images/bckgrnd.png',
-                    height: 100.h,width: 100.w,
-                    fit: BoxFit.cover),
-
+                SizedBox(height: 8.h,),
                 Container(
                   width: 100.w,
                   decoration:   const BoxDecoration(
@@ -41,23 +42,27 @@ class _SignupScreenState extends State<SignupScreen> {
                      key: signupFormKey,
                     child: Column(
                       children: [
-                        SizedBox(height: 8.h,),
+                        SizedBox(height: 2.h,),
                         Row(
                           children: [
                             SizedBox(width: 5.w,),
                             GestureDetector(
-                              onTap: (){},
+                              onTap: (){
+                                Get.offAll(()=>  WelcomeIndex( ));
+                              },
                               child: Image.asset('assets/images/crsoss.png',width: 8.w,fit: BoxFit.fill),),
 
                             SizedBox(width: 75.w,),
 
                             GestureDetector(
-                                onTap: (){},
+                                onTap: (){
+                                  Get.to(()=> LoginScreen());
+                                },
                                 child: Text('Skip',style: TxtStyleP, )),
                           ],
                         ),
 
-                        SizedBox(height: 15.h,),
+                        SizedBox(height: 10.h,),
 
                         Text('Create an account',style: TxtStyleTitle),
 
@@ -86,7 +91,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.all(12.0),
                                   border: InputBorder.none,
-                                  hintText: '   Email Address',
+                                  hintText: ' Email Address',
 
                               ),
                             ),
@@ -115,14 +120,14 @@ class _SignupScreenState extends State<SignupScreen> {
                             decoration: const InputDecoration(
                                 contentPadding: EdgeInsets.all(12.0),
                                 border: InputBorder.none,
-                                hintText: '    Password',
+                                hintText: '  Password',
 
                             ),
                           ),
                         ),
                         SizedBox(height: 3.h,),
 
-                        GestureDetector(
+                        InkWell(
                           onTap: (){},
                           child: Container(
                             height: 6.h,
@@ -137,7 +142,10 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         SizedBox(height: 5.h,),
-                        Text('I already have an account',style: TxtStyleP,),
+
+                        TextButton(
+                            onPressed: () => Get.to(()=> LoginScreen()),
+                            child: Text('I already have an account',style: TxtStyleP,)),
 
                         Divider(indent: 100,endIndent: 100,color: Colors.grey,thickness: 1.5),
                         SizedBox(height: 2.h,),
@@ -147,7 +155,9 @@ class _SignupScreenState extends State<SignupScreen> {
                             Image.asset('assets/images/mob.png',
                                 height: 3.h,width: 5.w,
                                 fit: BoxFit.fill),
-                            Text('Continue with Phone number',style: TxtStyleN),
+                            TextButton(
+                                onPressed: () => Get.to(()=> LoginScreen()),
+                                child: Text('Continue with Phone number',style: TxtStyleN)),
                           ],
                         ),
                         SizedBox(height: 2.h,),
@@ -157,6 +167,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             Image.asset('assets/images/gg.png',
                                 height: 3.h,width: 5.w,
                                 fit: BoxFit.fill),
+                            SizedBox(width: 1.w,),
                             Text('Continue with Google',style: TxtStyleN),
                           ],
                         ),
@@ -168,6 +179,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             Image.asset('assets/images/fb.png',
                                 height: 3.h,width: 5.w,
                                 fit: BoxFit.fill),
+                            SizedBox(width: 1.w,),
                             Text('Continue with Facebook',style: TxtStyleN),
                           ],
                         ),
@@ -176,8 +188,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
               ],
-            )
-        )
+            ),
+          )
+      ),
     );
   }
 }

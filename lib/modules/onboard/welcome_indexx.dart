@@ -3,6 +3,7 @@ import 'package:dopy_app/modules/onboard/welcome_screen.dart';
 import 'package:dopy_app/modules/onboard/welcome_screen2.dart';
 import 'package:dopy_app/modules/onboard/welcome_screen3.dart';
 import 'package:dopy_app/modules/user/login_screen.dart';
+import 'package:dopy_app/modules/user/signup_screen.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 import 'package:dopy_app/widgets/background_container.dart';
 
@@ -52,7 +53,7 @@ class _WelcomeIndexState extends State<WelcomeIndex> {
                   _list.length, (index) => buildDot(index, context))),
           GestureDetector(
             onTap: (){
-              Get.offAll(()=> LoginScreen());
+              Get.offAll(()=> SignupScreen());
             },
             child: Image.asset('assets/images/log_sg.png', width: 85.w,fit: BoxFit.fitWidth),
           ),

@@ -1,5 +1,7 @@
 
+import 'package:dopy_app/modules/home/home_index.dart';
 import 'package:dopy_app/modules/user/signup_screen.dart';
+import 'package:dopy_app/modules/user/verify_screen.dart';
 import 'package:dopy_app/utils/app_color.dart';
 import 'package:dopy_app/utils/packages_export/essentials.dart';
 import 'package:dopy_app/widgets/background_stack.dart';
@@ -22,14 +24,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-       child: Stack(
-        children: [
-          Image.asset('assets/images/bckgrnd.png',
-              height: 100.h,width: 100.w,
-              fit: BoxFit.cover),
-
+    return SafeArea(
+      child: Scaffold(
+        body: BackgroundScreen(
+          child: Column(
+            children: [
+              SizedBox(height: 8.h,),
               Container(
                 width: 100.w,
                 decoration:   const BoxDecoration(
@@ -42,19 +42,21 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 child: Column(
                   children: [
-                    SizedBox(height: 8.h,),
+                    SizedBox(height: 2.h,),
                      Row(
                        children: [
                          SizedBox(width: 5.w,),
                          GestureDetector(
-                           onTap: (){},
+                           onTap: (){
+                             Get.offAll(()=> SignupScreen());
+                           },
                            child: Image.asset('assets/images/crsoss.png',width: 8.w,fit: BoxFit.fill),),
 
                           SizedBox(width: 75.w,),
 
                          GestureDetector(
                              onTap: (){
-                               Get.to(()=> SignupScreen());
+                               Get.offAll(()=> HomeIndex());
                              },
                              child: Text('Skip',style: TxtStyleP, )),
                        ],
@@ -111,7 +113,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: (){
+                              Get.to(()=> VerifyScreen());
+                            },
                             child: Image.asset('assets/images/cntinue.png',
                                 height: 7.h ,width: 40.w,fit: BoxFit.fill),
                           ),
@@ -122,9 +126,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ],
-          )
-      )
-        );
+          ),
+        )
+          ),
+    );
 
   }
 }
